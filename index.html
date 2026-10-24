@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bharath Punati | AI and ML Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EFE9DC;
+    --ink: #1B2A3A;
+    --ink-soft: #4A5968;
+    --rule: #C9BFA9;
+    --signal: #C4532A;
+    --sage: #6F8F78;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero { padding: 88px 0 56px; border-bottom: 1px solid var(--rule); }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    line-height: 1.12;
+    margin: 0 0 18px;
+    max-width: 16ch;
+  }
+  .hero .lede { font-family: var(--serif); font-size: 1.25rem; color: var(--ink-soft); max-width: 46ch; margin: 0 0 28px; }
+  .hero nav a { margin-right: 22px; font-weight: 500; }
+
+  section { padding: 64px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+  h2 { font-family: var(--serif); font-weight: 600; font-size: 1.9rem; margin: 0 0 16px; line-height: 1.2; }
+  h3 { font-family: var(--serif); font-weight: 600; font-size: 1.2rem; margin: 0 0 6px; }
+  p { margin: 0 0 16px; max-width: 66ch; }
+
+  /* Finder: the one memorable element */
+  .finder {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 40px 36px;
+    margin: 8px 0 0;
+  }
+  .finder h2 { color: var(--paper); }
+  .finder p { color: #C8D0D8; }
+  .finder label { display: block; font-weight: 500; margin-bottom: 10px; }
+  .finder select {
+    width: 100%;
+    max-width: 520px;
+    font: inherit;
+    padding: 12px 14px;
+    background: var(--paper);
+    color: var(--ink);
+    border: 0;
+    border-radius: 2px;
+  }
+  .result {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid #3A4B5E;
+    min-height: 120px;
+  }
+  .result h3 { color: var(--paper); font-size: 1.5rem; }
+  .result dl { display: grid; grid-template-columns: 140px 1fr; gap: 8px 16px; margin: 16px 0 0; }
+  .result dt { color: #9FB0BF; font-weight: 500; }
+  .result dd { margin: 0; color: var(--paper); }
+  .result .why { color: #C8D0D8; margin-top: 16px; }
+
+  /* Atlas: three regions */
+  .regions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 24px; }
+  .region { padding: 0 22px 8px 0; }
+  .region + .region { padding-left: 22px; border-left: 1px solid var(--rule); }
+  .region h3 { color: var(--signal); margin-bottom: 14px; }
+  .region ul { list-style: none; padding: 0; margin: 0; }
+  .region li { padding: 12px 0; border-top: 1px solid var(--rule); }
+  .region li:first-child { border-top: none; padding-top: 0; }
+  .region strong { font-family: var(--serif); font-size: 1.05rem; display: block; }
+  .region .type { font-size: 0.9rem; color: var(--sage); font-weight: 600; }
+  .region .small { font-size: 0.95rem; color: var(--ink-soft); margin: 4px 0 0; }
+
+  /* Artifact details */
+  dl.artifact { margin: 0; }
+  dl.artifact div { padding: 14px 0; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 200px 1fr; gap: 16px; }
+  dl.artifact dt { font-weight: 600; }
+  dl.artifact dd { margin: 0; color: var(--ink-soft); }
+  dd.refs p.ref { margin: 0 0 10px; padding-left: 36px; text-indent: -36px; font-size: 0.95rem; }
+
+  footer { padding: 40px 0 64px; color: var(--ink-soft); font-size: 0.95rem; }
+
+  @media (max-width: 760px) {
+    .regions { grid-template-columns: 1fr; }
+    .region, .region + .region { padding: 24px 0 0; border-left: none; border-top: 1px solid var(--rule); }
+    .region:first-child { border-top: none; padding-top: 0; }
+    .finder { padding: 28px 22px; }
+    .result dl { grid-template-columns: 1fr; gap: 2px; }
+    .result dt { margin-top: 10px; }
+    dl.artifact div { grid-template-columns: 1fr; gap: 4px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Bharath Punati</h1>
+    <p class="lede">Systems Analyst at Qualcomm in San Diego, working in data engineering and AI. I focus on choosing the right algorithm for each problem.</p>
+    <nav>
+      <a href="#finder">Algorithm finder</a>
+      <a href="#atlas">Algorithm guide</a>
+      <a href="#artifact">Artifact details</a>
+      <a href="#about">About me</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="finder">
+    <div class="wrap">
+      <div class="finder">
+        <h2>Which algorithm fits my problem?</h2>
+        <p>Choose the kind of problem you are working on. The finder suggests an algorithm from the guide below and explains why it fits.</p>
+        <label for="problem">Problem type</label>
+        <select id="problem">
+          <option value="">Select a problem</option>
+          <option value="table-predict">Predict a category or yes or no answer from table data</option>
+          <option value="group">Group similar items when I have no labels</option>
+          <option value="simplify">Reduce many columns to a few key patterns</option>
+          <option value="image-classify">Recognize what is in an image</option>
+          <option value="text-classify">Understand or label text, such as sentiment or spam</option>
+          <option value="text-generate">Write or summarize text</option>
+          <option value="image-generate">Create a new image from a written description</option>
+        </select>
+        <div class="result" id="result" aria-live="polite">
+          <p>Your recommendation will appear here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="atlas">
+    <div class="wrap">
+      <h2>Algorithm guide</h2>
+      <p>Ten common algorithms, grouped by what they do. The learning type shows whether the algorithm uses labeled examples.</p>
+      <div class="regions">
+        <div class="region">
+          <h3>Predict and classify</h3>
+          <ul>
+            <li><strong>Decision Tree</strong><span class="type">Supervised, tabular data</span><p class="small">Asks a series of yes or no questions until it reaches an answer. Example: approving or denying a loan.</p></li>
+            <li><strong>Random Forest</strong><span class="type">Supervised, tabular data</span><p class="small">Builds many decision trees and lets them vote. Example: predicting which customers will cancel.</p></li>
+            <li><strong>Support Vector Machine</strong><span class="type">Supervised, tabular data and NLP</span><p class="small">Finds the boundary that best separates two groups. Example: sorting email into spam and not spam.</p></li>
+            <li><strong>CNN</strong><span class="type">Supervised, computer vision</span><p class="small">Scans images in small pieces to find edges and shapes. Example: recognizing faces in photos.</p></li>
+            <li><strong>BERT</strong><span class="type">Supervised (fine-tuned), NLP</span><p class="small">Reads words in both directions to understand each word in context. Example: rating a review as positive or negative.</p></li>
+          </ul>
+        </div>
+        <div class="region">
+          <h3>Find patterns</h3>
+          <ul>
+            <li><strong>K-Means Clustering</strong><span class="type">Unsupervised, tabular data</span><p class="small">Places items into a set number of groups by similarity. Example: grouping shoppers by buying habits.</p></li>
+            <li><strong>Principal Component Analysis</strong><span class="type">Unsupervised, tabular data and computer vision</span><p class="small">Reduces many columns into a few main patterns. Example: simplifying a large survey.</p></li>
+          </ul>
+        </div>
+        <div class="region">
+          <h3>Generate</h3>
+          <ul>
+            <li><strong>GPT</strong><span class="type">Self-supervised, NLP and generative AI</span><p class="small">Predicts the next word using patterns from large amounts of text. Example: writing summaries.</p></li>
+            <li><strong>GAN</strong><span class="type">Unsupervised, generative AI and computer vision</span><p class="small">A generator and a discriminator compete until the fake images look real. Example: creating realistic faces of people who do not exist.</p></li>
+            <li><strong>Diffusion Model</strong><span class="type">Self-supervised, generative AI and computer vision</span><p class="small">Removes noise step by step until a clear image matches a prompt. Example: Stable Diffusion images from text.</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="artifact">
+    <div class="wrap">
+      <h2>Artifact: Machine Learning Algorithms Visual Guide</h2>
+      <dl class="artifact">
+        <div><dt>Introduction</dt><dd>This artifact is a visual guide to ten common machine learning algorithms, the type of learning each one uses, and where each is most often applied.</dd></div>
+        <div><dt>Description</dt><dd>The guide covers tabular data, computer vision, natural language processing, and generative AI. Each algorithm includes its learning type, application domains, a real-world example, and a plain-language explanation.</dd></div>
+        <div><dt>Objective</dt><dd>To show how algorithms are grouped and when each one is the right choice for a problem.</dd></div>
+        <div><dt>Process</dt><dd>I reviewed course resources on AI, ML, deep learning, and generative AI, then selected algorithms that cover different domains and learning styles. I wrote a plain-language explanation and a practical example for each one.</dd></div>
+        <div><dt>Tools and technologies</dt><dd>HTML, CSS, JavaScript, GitHub, and GitHub Pages.</dd></div>
+        <div><dt>Value proposition</dt><dd>This guide helps non-specialists and team members choose an algorithm that fits a given problem.</dd></div>
+        <div><dt>Unique value</dt><dd>Each algorithm is linked to a real use case, and the finder turns the guide into a tool for choosing an approach.</dd></div>
+        <div><dt>Relevance</dt><dd>Choosing the right algorithm is a core skill for AI and data roles.</dd></div>
+        <div><dt>References</dt><dd class="refs"><p class="ref">Breiman, L. (2001). Random forests. <em>Machine Learning, 45</em>(1), 5–32.</p><p class="ref">Cortes, C., &amp; Vapnik, V. (1995). Support-vector networks. <em>Machine Learning, 20</em>(3), 273–297.</p><p class="ref">Devlin, J., Chang, M.-W., Lee, K., &amp; Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In <em>Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics</em> (pp. 4171–4186). ACL.</p><p class="ref">Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <em>Deep learning</em>. MIT Press.</p><p class="ref">Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair, S., Courville, A., &amp; Bengio, Y. (2014). Generative adversarial nets. In <em>Advances in Neural Information Processing Systems, 27</em>.</p><p class="ref">Ho, J., Jain, A., &amp; Abbeel, P. (2020). Denoising diffusion probabilistic models. In <em>Advances in Neural Information Processing Systems, 33</em> (pp. 6840–6851).</p><p class="ref">Krizhevsky, A., Sutskever, I., &amp; Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. In <em>Advances in Neural Information Processing Systems, 25</em>.</p><p class="ref">Lloyd, S. P. (1982). Least squares quantization in PCM. <em>IEEE Transactions on Information Theory, 28</em>(2), 129–137.</p><p class="ref">Pearson, K. (1901). On lines and planes of closest fit to systems of points in space. <em>The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science, 2</em>(11), 559–572.</p><p class="ref">Quinlan, J. R. (1986). Induction of decision trees. <em>Machine Learning, 1</em>(1), 81–106.</p><p class="ref">Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., &amp; Sutskever, I. (2019). <em>Language models are unsupervised multitask learners</em>. OpenAI.</p><p class="ref">Rombach, R., Blattmann, A., Lorenz, D., Esser, P., &amp; Ommer, B. (2022). High-resolution image synthesis with latent diffusion models. In <em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</em> (pp. 10684–10695).</p><p class="ref">Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., &amp; Polosukhin, I. (2017). Attention is all you need. In <em>Advances in Neural Information Processing Systems, 30</em> (pp. 5998–6008).</p></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About me</h2>
+      <p>I am a Systems Analyst (Staff level) at Qualcomm in San Diego. My work covers data engineering, business intelligence, and enterprise analytics, including AI-powered reporting, ETL pipelines, and data quality frameworks. Before Qualcomm, I was a Data Engineer at Denken Solutions, where I built Apache Airflow pipelines, Snowflake data warehouses, and a churn prediction model. I hold a master's degree in Data Analytics Engineering from Northeastern University and am currently completing a Master of Science in Artificial Intelligence with Data Analytics at Indiana Wesleyan University. My goal is to build AI systems that are accurate, transparent, and useful for business decisions.</p>
+      <h3>Personal value proposition</h3>
+      <p>I bring hands-on experience building production data pipelines and AI reporting tools. I focus on making AI systems accurate, explainable, and governed before they reach business users.</p>
+      <p>Email: <a href="mailto:bpunatti@gmail.com">bpunatti@gmail.com</a><br>Location: San Diego, CA<br>Portfolio: <a href="https://bharathp-iwu.github.io/">bharathp-iwu.github.io</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Built as part of my graduate coursework in AI and data analytics.</div>
+</footer>
+
+<script>
+  const recommendations = {
+    "table-predict": {
+      name: "Random Forest (or Decision Tree to start)",
+      type: "Supervised",
+      domain: "Tabular data",
+      example: "Predicting which customers will cancel a service",
+      why: "Table data with labeled outcomes is a good fit for tree-based models. A single decision tree is easy to explain, and a random forest is usually more accurate because many trees vote together."
+    },
+    "group": {
+      name: "K-Means Clustering",
+      type: "Unsupervised",
+      domain: "Tabular data",
+      example: "Grouping shoppers by buying habits",
+      why: "When there are no labels, K-Means sorts items into a set number of groups based on how similar they are. You choose the number of groups, so check the results to see if the groups make sense."
+    },
+    "simplify": {
+      name: "Principal Component Analysis (PCA)",
+      type: "Unsupervised",
+      domain: "Tabular data and computer vision",
+      example: "Simplifying a large survey so the main patterns are easier to see",
+      why: "PCA combines many correlated columns into a few components that keep most of the information. It is useful before modeling or when you want to visualize high-dimensional data."
+    },
+    "image-classify": {
+      name: "Convolutional Neural Network (CNN)",
+      type: "Supervised",
+      domain: "Computer vision",
+      example: "Recognizing faces or objects in photos",
+      why: "CNNs learn local patterns such as edges and textures, then combine them into shapes and objects. This structure fits images well, which is why CNNs are the standard choice for image classification."
+    },
+    "text-classify": {
+      name: "BERT (Transformer model)",
+      type: "Supervised (fine-tuned)",
+      domain: "Natural language processing",
+      example: "Labeling a product review as positive or negative",
+      why: "BERT reads each word in the context of the words around it, which helps with subtle meaning. For simple tasks with small datasets, a Support Vector Machine using TF-IDF features can also work well and is faster to train."
+    },
+    "text-generate": {
+      name: "GPT (Language model)",
+      type: "Self-supervised",
+      domain: "Natural language processing and generative AI",
+      example: "Drafting summaries or answering questions in text",
+      why: "GPT models are trained to predict the next word, which lets them generate fluent text. They can be used for drafting and summarizing, but their output should be checked for accuracy."
+    },
+    "image-generate": {
+      name: "Diffusion Model (such as Stable Diffusion)",
+      type: "Self-supervised",
+      domain: "Generative AI and computer vision",
+      example: "Turning a written prompt into an image",
+      why: "Diffusion models start from random noise and remove it step by step, guided by the text prompt. They are the common choice today for text-to-image generation."
+    }
+  };
+
+  const select = document.getElementById("problem");
+  const result = document.getElementById("result");
+
+  select.addEventListener("change", () => {
+    const item = recommendations[select.value];
+    if (!item) {
+      result.innerHTML = "<p>Your recommendation will appear here.</p>";
+      return;
+    }
+    result.innerHTML = `
+      <h3>${item.name}</h3>
+      <dl>
+        <dt>Learning type</dt><dd>${item.type}</dd>
+        <dt>Domain</dt><dd>${item.domain}</dd>
+        <dt>Example</dt><dd>${item.example}</dd>
+      </dl>
+      <p class="why">${item.why}</p>
+    `;
+  });
+</script>
+</body>
+</html>
