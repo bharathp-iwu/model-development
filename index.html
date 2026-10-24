@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bharath Punati | AI and ML Portfolio</title>
+<meta name="description" content="Portfolio of Bharath Punati, Systems Analyst at Qualcomm in San Diego. A visual guide to ten machine learning algorithms, with an interactive finder for choosing the right algorithm for a problem.">
+<meta property="og:title" content="Bharath Punati | AI and ML Portfolio">
+<meta property="og:description" content="A visual guide to ten machine learning algorithms, with an interactive finder for choosing the right algorithm for a problem.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bharathp-iwu.github.io/model-development/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23C4532A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23EFE9DC' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+<script>document.documentElement.classList.add("js");</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -43,6 +51,14 @@
   }
   .hero .lede { font-family: var(--serif); font-size: 1.25rem; color: var(--ink-soft); max-width: 46ch; margin: 0 0 28px; }
   .hero nav a { margin-right: 22px; font-weight: 500; }
+  .hero-links { margin: 26px 0 0; }
+  .hero-links a { margin-right: 22px; font-weight: 500; }
+
+  /* Scroll reveal (JS-gated, motion-safe) */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    html.js .reveal.visible { opacity: 1; transform: none; }
+  }
 
   section { padding: 64px 0; border-bottom: 1px solid var(--rule); }
   section:last-of-type { border-bottom: none; }
@@ -127,11 +143,12 @@
       <a href="#artifact">Artifact details</a>
       <a href="#about">About me</a>
     </nav>
+    <p class="hero-links"><a href="https://www.linkedin.com/in/bharathpunati01" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/bharathp-iwu" target="_blank" rel="noopener">GitHub</a></p>
   </div>
 </header>
 
 <main>
-  <section id="finder">
+  <section class="reveal" id="finder">
     <div class="wrap">
       <div class="finder">
         <h2>Which algorithm fits my problem?</h2>
@@ -154,7 +171,7 @@
     </div>
   </section>
 
-  <section id="atlas">
+  <section class="reveal" id="atlas">
     <div class="wrap">
       <h2>Algorithm guide</h2>
       <p>Ten common algorithms, grouped by what they do. The learning type shows whether the algorithm uses labeled examples.</p>
@@ -188,7 +205,7 @@
     </div>
   </section>
 
-  <section id="artifact">
+  <section class="reveal" id="artifact">
     <div class="wrap">
       <h2>Artifact: Machine Learning Algorithms Visual Guide</h2>
       <dl class="artifact">
@@ -205,13 +222,13 @@
     </div>
   </section>
 
-  <section id="about">
+  <section class="reveal" id="about">
     <div class="wrap">
       <h2>About me</h2>
-      <p>I am a Systems Analyst (Staff level) at Qualcomm in San Diego. My work covers data engineering, business intelligence, and enterprise analytics, including AI-powered reporting, ETL pipelines, and data quality frameworks. Before Qualcomm, I was a Data Engineer at Denken Solutions, where I built Apache Airflow pipelines, Snowflake data warehouses, and a churn prediction model. I hold a master's degree in Data Analytics Engineering from Northeastern University and am currently completing a Master of Science in Artificial Intelligence with Data Analytics at Indiana Wesleyan University. My goal is to build AI systems that are accurate, transparent, and useful for business decisions.</p>
+      <p>I am a Systems Analyst at Qualcomm in San Diego. My work covers data engineering, business intelligence, and enterprise analytics, including AI-powered reporting, ETL pipelines, and data quality frameworks. Before Qualcomm, I was a Data Engineer at Denken Solutions, where I built Apache Airflow pipelines, Snowflake data warehouses, and a churn prediction model. I hold a master's degree in Data Analytics Engineering from Northeastern University and am currently completing a Master of Science in Artificial Intelligence with Data Analytics at Indiana Wesleyan University. My goal is to build AI systems that are accurate, transparent, and useful for business decisions.</p>
       <h3>Personal value proposition</h3>
       <p>I bring hands-on experience building production data pipelines and AI reporting tools. I focus on making AI systems accurate, explainable, and governed before they reach business users.</p>
-      <p>Email: <a href="mailto:bhpunatti@gmail.com">bhpunatti@gmail.com</a><br>Location: San Diego, CA<br>Portfolio: <a href="https://bharathp-iwu.github.io/">bharathp-iwu.github.io</a></p>
+      <p>Email: <a href="mailto:bhpunatti@gmail.com">bhpunatti@gmail.com</a><br>LinkedIn: <a href="https://www.linkedin.com/in/bharathpunati01">linkedin.com/in/bharathpunati01</a><br>Location: San Diego, CA<br>Portfolio: <a href="https://bharathp-iwu.github.io/">bharathp-iwu.github.io</a></p>
     </div>
   </section>
 </main>
@@ -292,6 +309,21 @@
       <p class="why">${item.why}</p>
     `;
   });
+
+  const revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach((el) => io.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add("visible"));
+  }
 </script>
 </body>
 </html>
