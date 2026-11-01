@@ -4,14 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bharath Punati | AI and ML Portfolio</title>
-<meta name="description" content="Portfolio of Bharath Punati, Systems Analyst at Qualcomm in San Diego. A visual guide to ten machine learning algorithms, with an interactive finder for choosing the right algorithm for a problem.">
+<meta name="description" content="Portfolio of Bharath Punati, Systems Analyst at Qualcomm in San Diego. A visual guide to machine learning algorithms, an algorithm finder, and a neural network components artifact.">
 <meta property="og:title" content="Bharath Punati | AI and ML Portfolio">
-<meta property="og:description" content="A visual guide to ten machine learning algorithms, with an interactive finder for choosing the right algorithm for a problem.">
+<meta property="og:description" content="A visual guide to ten machine learning algorithms, an interactive algorithm finder, and a neural network components artifact.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bharathp-iwu.github.io/model-development/">
-<meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23C4532A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23EFE9DC' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
-<script>document.documentElement.classList.add("js");</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231B2A3A'/><text x='50' y='68' font-size='58' text-anchor='middle' fill='%23EFE9DC' font-family='Georgia'>B</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -51,14 +49,6 @@
   }
   .hero .lede { font-family: var(--serif); font-size: 1.25rem; color: var(--ink-soft); max-width: 46ch; margin: 0 0 28px; }
   .hero nav a { margin-right: 22px; font-weight: 500; }
-  .hero-links { margin: 26px 0 0; }
-  .hero-links a { margin-right: 22px; font-weight: 500; }
-
-  /* Scroll reveal (JS-gated, motion-safe) */
-  @media (prefers-reduced-motion: no-preference) {
-    html.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    html.js .reveal.visible { opacity: 1; transform: none; }
-  }
 
   section { padding: 64px 0; border-bottom: 1px solid var(--rule); }
   section:last-of-type { border-bottom: none; }
@@ -128,7 +118,25 @@
     .result dt { margin-top: 10px; }
     dl.artifact div { grid-template-columns: 1fr; gap: 4px; }
   }
+
+  /* Artifact 2 (Neural Network Components) */
+  #artifact-2 .diagram { background:#FFFFFF; border:1px solid var(--rule); padding:20px; margin:18px 0 10px; }
+  #artifact-2 .diagram svg { width:100%; height:auto; display:block; }
+  #artifact-2 .caption { font-size:0.95rem; color:var(--ink-soft); margin:0; }
+  #artifact-2 .grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:20px; }
+  #artifact-2 .card { background:#FFFFFF; border:1px solid var(--rule); border-left:5px solid var(--signal); padding:20px 22px; }
+  #artifact-2 .card h3 { margin-bottom:8px; }
+  #artifact-2 .card p { margin:0; font-size:0.98rem; color:var(--ink-soft); }
+  #artifact-2 ul { padding-left:20px; margin:0; }
+  #artifact-2 li { margin-bottom:8px; }
+  #artifact-2 .download { display:inline-block; margin-top:8px; font-weight:600; }
+  @media (max-width: 700px) { #artifact-2 .grid { grid-template-columns:1fr; } }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 </style>
 </head>
 <body>
@@ -141,14 +149,16 @@
       <a href="#finder">Algorithm finder</a>
       <a href="#atlas">Algorithm guide</a>
       <a href="#artifact">Artifact details</a>
+      <a href="#artifact-2">Artifact 2: Neural Networks</a>
       <a href="#about">About me</a>
+      <a href="https://www.linkedin.com/in/bharathpunati01" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/bharathp-iwu" target="_blank" rel="noopener">GitHub</a>
     </nav>
-    <p class="hero-links"><a href="https://www.linkedin.com/in/bharathpunati01" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/bharathp-iwu" target="_blank" rel="noopener">GitHub</a></p>
   </div>
 </header>
 
 <main>
-  <section class="reveal" id="finder">
+  <section id="finder">
     <div class="wrap">
       <div class="finder">
         <h2>Which algorithm fits my problem?</h2>
@@ -171,7 +181,7 @@
     </div>
   </section>
 
-  <section class="reveal" id="atlas">
+  <section id="atlas">
     <div class="wrap">
       <h2>Algorithm guide</h2>
       <p>Ten common algorithms, grouped by what they do. The learning type shows whether the algorithm uses labeled examples.</p>
@@ -205,7 +215,7 @@
     </div>
   </section>
 
-  <section class="reveal" id="artifact">
+  <section id="artifact">
     <div class="wrap">
       <h2>Artifact: Machine Learning Algorithms Visual Guide</h2>
       <dl class="artifact">
@@ -222,13 +232,51 @@
     </div>
   </section>
 
-  <section class="reveal" id="about">
+<section id="artifact-2">
+  <div class="wrap">
+    <h2>Artifact 2: Neural Network Components</h2>
+    <h3>How data flows through a network</h3>
+    <p>A neural network receives data at the input layer, transforms it in one or more hidden layers, and produces a prediction at the output layer.</p>
+    <div class="diagram"><svg viewBox="0 0 600 310" role="img" aria-label="Diagram of a neural network with three input neurons, four hidden neurons, and one output neuron"><g><line x1="136" y1="94.0" x2="284" y2="66.0" stroke="#C9BFA9" stroke-width="1.2"/><line x1="136" y1="94.0" x2="284" y2="122.0" stroke="#C9BFA9" stroke-width="1.2"/><line x1="136" y1="94.0" x2="284" y2="178.0" stroke="#C9BFA9" stroke-width="1.2"/><line x1="136" y1="94.0" x2="284" y2="234.0" stroke="#C9BFA9" stroke-width="1.2"/><line x1="136" y1="150.0" x2="284" y2="66.0" stroke="#C9BFA9" stroke-width="1.2"/><line x1="136" y1="150.0" x2="284" y2="122.0" stroke="#C9BFA9" stroke-width="1.2"/><line x1="136" y1="150.0" x2="284" y2="178.0" stroke="#C9BFA9" stroke-width="1.2"/><line x1="136" y1="150.0" x2="284" y2="234.0" stroke="#C9BFA9" stroke-width="1.2"/><line x1="136" y1="206.0" x2="284" y2="66.0" stroke="#C9BFA9" stroke-width="1.2"/><line x1="136" y1="206.0" x2="284" y2="122.0" stroke="#C9BFA9" stroke-width="1.2"/><line x1="136" y1="206.0" x2="284" y2="178.0" stroke="#C9BFA9" stroke-width="1.2"/><line x1="136" y1="206.0" x2="284" y2="234.0" stroke="#C9BFA9" stroke-width="1.2"/><line x1="316" y1="66.0" x2="464" y2="150.0" stroke="#C9BFA9" stroke-width="1.2"/><line x1="316" y1="122.0" x2="464" y2="150.0" stroke="#C9BFA9" stroke-width="1.2"/><line x1="316" y1="178.0" x2="464" y2="150.0" stroke="#C9BFA9" stroke-width="1.2"/><line x1="316" y1="234.0" x2="464" y2="150.0" stroke="#C9BFA9" stroke-width="1.2"/><circle cx="120" cy="94.0" r="16" fill="#6F8F78" stroke="#F4EFE4" stroke-width="2"/><circle cx="120" cy="150.0" r="16" fill="#6F8F78" stroke="#F4EFE4" stroke-width="2"/><circle cx="120" cy="206.0" r="16" fill="#6F8F78" stroke="#F4EFE4" stroke-width="2"/><circle cx="300" cy="66.0" r="16" fill="#1B2A3A" stroke="#F4EFE4" stroke-width="2"/><circle cx="300" cy="122.0" r="16" fill="#1B2A3A" stroke="#F4EFE4" stroke-width="2"/><circle cx="300" cy="178.0" r="16" fill="#1B2A3A" stroke="#F4EFE4" stroke-width="2"/><circle cx="300" cy="234.0" r="16" fill="#1B2A3A" stroke="#F4EFE4" stroke-width="2"/><circle cx="480" cy="150.0" r="16" fill="#C4532A" stroke="#F4EFE4" stroke-width="2"/></g><text x="120" y="290" text-anchor="middle" font-size="15" font-weight="700" fill="#1B2A3A">Input layer</text><text x="300" y="290" text-anchor="middle" font-size="15" font-weight="700" fill="#1B2A3A">Hidden layer</text><text x="480" y="290" text-anchor="middle" font-size="15" font-weight="700" fill="#1B2A3A">Output layer</text></svg></div>
+    <p class="caption">Figure 1. A simple network with three input neurons, four hidden neurons, and one output neuron.</p>
+  </div>
+
+  <div class="wrap">
+    <h2>The six components</h2>
+    <div class="grid">
+      <div class="card"><h3>Layers</h3><p>A group of neurons that work together on the same step. The input layer receives data, hidden layers process it, and the output layer gives the final answer.</p></div>
+      <div class="card"><h3>Neurons</h3><p>A small calculation unit. It combines its inputs using weights, applies an activation function, and passes one number forward.</p></div>
+      <div class="card"><h3>Weights</h3><p>Numbers that control how strongly each input affects a neuron. Training adjusts them so predictions improve.</p></div>
+      <div class="card"><h3>Activation functions</h3><p>Rules that decide how much a neuron passes on. They add non-linearity, which lets the network learn complex patterns. ReLU is a common example.</p></div>
+      <div class="card"><h3>Loss functions</h3><p>Measures of how wrong the predictions are. A high loss means the network needs to improve. Mean squared error and cross-entropy are common examples.</p></div>
+      <div class="card"><h3>Optimization algorithms</h3><p>Methods that use the loss to change the weights. Gradient descent moves weights to lower the loss, and Adam is a popular optimizer.</p></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <h2>Training in short</h2>
+    <ul>
+      <li>The network makes a prediction from the input.</li>
+      <li>The loss function measures how far the prediction is from the correct answer.</li>
+      <li>The optimizer adjusts the weights to reduce the loss.</li>
+      <li>This cycle repeats until the predictions are accurate enough.</li>
+    </ul>
+  </div>
+
+  <div class="wrap">
+    <h2>Summary</h2>
+    <p>Visualizing a neural network makes it easier to explain how it learns. Seeing the layers, weights, and loss in one picture helps show why small changes in data, noise, or network size can affect results. Working in the Neural Network Playground showed me this in practice.</p>
+    <p><a class="download" href="Neural_Network_Components.pptx">Download the slide deck (PowerPoint)</a></p>
+  </div>
+</section>
+
+  <section id="about">
     <div class="wrap">
       <h2>About me</h2>
       <p>I am a Systems Analyst at Qualcomm in San Diego. My work covers data engineering, business intelligence, and enterprise analytics, including AI-powered reporting, ETL pipelines, and data quality frameworks. Before Qualcomm, I was a Data Engineer at Denken Solutions, where I built Apache Airflow pipelines, Snowflake data warehouses, and a churn prediction model. I hold a master's degree in Data Analytics Engineering from Northeastern University and am currently completing a Master of Science in Artificial Intelligence with Data Analytics at Indiana Wesleyan University. My goal is to build AI systems that are accurate, transparent, and useful for business decisions.</p>
       <h3>Personal value proposition</h3>
       <p>I bring hands-on experience building production data pipelines and AI reporting tools. I focus on making AI systems accurate, explainable, and governed before they reach business users.</p>
-      <p>Email: <a href="mailto:bhpunatti@gmail.com">bhpunatti@gmail.com</a><br>LinkedIn: <a href="https://www.linkedin.com/in/bharathpunati01">linkedin.com/in/bharathpunati01</a><br>Location: San Diego, CA<br>Portfolio: <a href="https://bharathp-iwu.github.io/">bharathp-iwu.github.io</a></p>
+      <p>Email: <a href="mailto:bhpunatti@gmail.com">bhpunatti@gmail.com</a><br>Location: San Diego, CA<br>Portfolio: <a href="https://bharathp-iwu.github.io/model-development/">bharathp-iwu.github.io/model-development</a></p>
     </div>
   </section>
 </main>
@@ -309,21 +357,20 @@
       <p class="why">${item.why}</p>
     `;
   });
+</script>
 
-  const revealEls = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          io.unobserve(entry.target);
-        }
+<script>
+  (function () {
+    var sections = document.querySelectorAll("main section");
+    if (!("IntersectionObserver" in window)) { return; }
+    sections.forEach(function (s) { s.classList.add("reveal"); });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); }
       });
-    }, { threshold: 0.12 });
-    revealEls.forEach((el) => io.observe(el));
-  } else {
-    revealEls.forEach((el) => el.classList.add("visible"));
-  }
+    }, { threshold: 0.08 });
+    sections.forEach(function (s) { io.observe(s); });
+  })();
 </script>
 </body>
 </html>
