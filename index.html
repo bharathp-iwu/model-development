@@ -133,6 +133,29 @@
   @media (max-width: 700px) { #artifact-2 .grid { grid-template-columns:1fr; } }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
+
+  /* Artifact 3 (LLM Training & Costs) — DRAFT */
+  #artifact-3 .pipeline { display:grid; grid-template-columns:repeat(7,1fr); gap:10px; margin:22px 0 8px; }
+  #artifact-3 .step { background:#FFFFFF; border:1px solid var(--rule); border-top:5px solid var(--signal); padding:14px 12px; }
+  #artifact-3 .step .num { font-family:var(--serif); font-weight:700; color:var(--signal); font-size:1.3rem; display:block; }
+  #artifact-3 .step h3 { font-size:1rem; margin:4px 0 6px; }
+  #artifact-3 .step p { font-size:0.88rem; color:var(--ink-soft); margin:0; }
+  #artifact-3 .grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:20px; }
+  #artifact-3 .card { background:#FFFFFF; border:1px solid var(--rule); border-left:5px solid var(--sage); padding:20px 22px; }
+  #artifact-3 .card h3 { margin-bottom:8px; }
+  #artifact-3 .card p { margin:0; font-size:0.98rem; color:var(--ink-soft); }
+  #artifact-3 table { width:100%; border-collapse:collapse; margin:18px 0 8px; background:#FFFFFF; font-size:0.92rem; }
+  #artifact-3 th, #artifact-3 td { border:1px solid var(--rule); padding:10px 12px; text-align:left; vertical-align:top; }
+  #artifact-3 th { background:var(--ink); color:var(--paper); font-weight:600; }
+  #artifact-3 .bars { margin:18px 0 8px; }
+  #artifact-3 .bar-row { display:grid; grid-template-columns:170px 1fr 110px; gap:12px; align-items:center; margin-bottom:10px; font-size:0.95rem; }
+  #artifact-3 .bar { background:var(--signal); height:20px; }
+  #artifact-3 .bar.alt { background:var(--sage); }
+  #artifact-3 .note { font-size:0.92rem; color:var(--ink-soft); }
+  #artifact-3 .todo { background:#FFF7E8; border:1px dashed var(--signal); padding:14px 18px; font-size:0.95rem; margin:14px 0; }
+  @media (max-width: 900px) { #artifact-3 .pipeline { grid-template-columns:1fr 1fr; } }
+  @media (max-width: 700px) { #artifact-3 .grid { grid-template-columns:1fr; } #artifact-3 .bar-row { grid-template-columns:1fr; gap:4px; } #artifact-3 table { font-size:0.85rem; } }
+
   /* Scroll reveal */
   .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
   .reveal.visible { opacity: 1; transform: none; }
@@ -150,6 +173,7 @@
       <a href="#atlas">Algorithm guide</a>
       <a href="#artifact">Artifact details</a>
       <a href="#artifact-2">Artifact 2: Neural Networks</a>
+      <a href="#artifact-3">Artifact 3: LLM Training</a>
       <a href="#about">About me</a>
       <a href="https://www.linkedin.com/in/bharathpunati01" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/bharathp-iwu" target="_blank" rel="noopener">GitHub</a>
@@ -270,6 +294,63 @@
   </div>
 </section>
 
+
+<section id="artifact-3">
+  <div class="wrap">
+    <h2>Artifact 3: How Large Language Models Are Trained — and What It Costs</h2>
+    <p>Frontier generative AI models such as GPT-4, Gemini, Claude, and Llama are not trained on a single computer or in a single step. Training is an industrial process: it moves from raw data collection to deployment through a pipeline that consumes specialized chips, large datasets, electricity, and months of engineering time. This artifact maps that pipeline and compares what is publicly known — and not known — about the resources behind four model families.</p>
+
+    <h3>The training pipeline, in seven steps</h3>
+    <div class="pipeline">
+      <div class="step"><span class="num">1</span><h3>Data collection</h3><p>Text, code, images, and audio are gathered from licensed sources, public web data, books, and partner datasets.</p></div>
+      <div class="step"><span class="num">2</span><h3>Cleaning &amp; tokenization</h3><p>Duplicates, low-quality and harmful content are filtered out; text is split into tokens, the units the model actually reads.</p></div>
+      <div class="step"><span class="num">3</span><h3>Pre-training</h3><p>The model predicts the next token billions of times across trillions of tokens. This is the most compute- and energy-intensive step by far.</p></div>
+      <div class="step"><span class="num">4</span><h3>Supervised fine-tuning</h3><p>Human-written examples teach the model to follow instructions and answer in a useful format.</p></div>
+      <div class="step"><span class="num">5</span><h3>Alignment</h3><p>Human or AI feedback (RLHF / RLAIF) ranks responses so the model becomes safer and more helpful.</p></div>
+      <div class="step"><span class="num">6</span><h3>Evaluation &amp; safety</h3><p>Benchmarks, red-teaming, and safety checks test capability and risk before release.</p></div>
+      <div class="step"><span class="num">7</span><h3>Deployment</h3><p>The model is served from data centers. Inference then becomes an ongoing cost for every query, long after training ends.</p></div>
+    </div>
+    <p class="note">Step 3 dominates the training budget. A useful rule of thumb: training compute &asymp; 6 &times; parameters &times; training tokens (Kaplan et al., 2020).</p>
+
+    <h3>Where the money goes</h3>
+    <div class="grid">
+      <div class="card"><h3>Compute (the largest share)</h3><p>Epoch AI estimates AI accelerator chips make up roughly 47–65% of the amortized cost of a frontier training run. Thousands of GPUs or TPUs run in parallel for weeks to months.</p></div>
+      <div class="card"><h3>People</h3><p>Research and engineering staff account for an estimated 29–49% of total cost once experiments and failed runs are counted — training is a team effort over many months, not one run.</p></div>
+      <div class="card"><h3>Data</h3><p>Licensing, purchasing, cleaning, and labeling data, plus paying human raters for fine-tuning and feedback. Costs are rarely disclosed separately.</p></div>
+      <div class="card"><h3>Energy</h3><p>Only about 2–6% of the dollar cost in Epoch AI's model, but large in absolute terms: GPT-4's training has been estimated at roughly 50 GWh of electricity.</p></div>
+      <div class="card"><h3>Infrastructure</h3><p>Servers (15–22%), high-speed interconnect between chips (9–13%), storage, networking, and the data-center buildings themselves.</p></div>
+      <div class="card"><h3>Time</h3><p>Meta's Llama 3 405B pre-training ran 54 days on up to 16,384 H100 GPUs, with 419 unexpected interruptions — most from hardware. At this scale, failures are routine, not rare.</p></div>
+    </div>
+
+    <h3>Four model families, compared honestly</h3>
+    <table>
+      <tr><th>Model</th><th>What is disclosed</th><th>Training resources</th><th>Cost figures (labeled by method)</th></tr>
+      <tr><td><strong>Llama 3.1 405B</strong> (Meta, 2024)</td><td>Most transparent: full paper and model card</td><td>405B parameters; 15.6 trillion tokens; 3.8&times;10<sup>25</sup> FLOPs; 30.84M H100 GPU-hours for the 405B model (39.3M for the family); up to 16,384 H100s; 11,390 t CO<sub>2</sub>e location-based emissions (0 market-based, renewable-matched)</td><td>No official dollar figure. At an illustrative $2–3 per GPU-hour, compute alone implies roughly $60–95M — an estimate, not a Meta figure.</td></tr>
+      <tr><td><strong>GPT-4</strong> (OpenAI, 2023)</td><td>Architecture, size, and cost not disclosed</td><td>Training compute estimated at ~2&times;10<sup>25</sup> FLOPs; energy estimated at ~50 GWh</td><td>~$78M compute cost (Stanford AI Index 2025, using Epoch AI data); ~$40M under Epoch AI's narrower amortized hardware + energy method (2024). Sam Altman has said GPT-4 cost &quot;more than $100 million&quot; to train, likely counting more than the final run.</td></tr>
+      <tr><td><strong>Gemini Ultra</strong> (Google DeepMind, 2023)</td><td>Trained on Google TPU v4 and v5e pods; size and cost not disclosed</td><td>Multimodal from the start (text, code, image, audio, video); compute estimated in the same 10<sup>25</sup> FLOP range as GPT-4</td><td>~$191M (Stanford AI Index estimate) vs ~$30M under Epoch AI's amortized hardware + energy method. The gap shows why the estimation method must always be stated.</td></tr>
+      <tr><td><strong>Claude</strong> (Anthropic)</td><td>Least disclosed: no parameter count, training FLOPs, or training cost published for any Claude model</td><td>Trained on a mix of AWS Trainium and Google TPU infrastructure (per Anthropic announcements)</td><td>No credible public figure exists. Any specific Claude training cost found online should be treated as unsourced.</td></tr>
+    </table>
+    <p class="note">Why estimates differ: some count only the final successful run's compute; others add hardware amortization, experiments, or staff. Frontier training costs overall have grown about 2.4&times; per year since 2016 (Epoch AI).</p>
+
+    <h3>How fast costs have climbed</h3>
+    <div class="bars">
+      <div class="bar-row"><span>Transformer (2017)</span><div class="bar alt" style="width:2%"></div><span>~$670</span></div>
+      <div class="bar-row"><span>GPT-3 (2020)</span><div class="bar alt" style="width:6%"></div><span>~$4–5M</span></div>
+      <div class="bar-row"><span>GPT-4 (2023)</span><div class="bar" style="width:41%"></div><span>~$78M</span></div>
+      <div class="bar-row"><span>Gemini Ultra (2023)</span><div class="bar" style="width:100%"></div><span>~$191M</span></div>
+    </div>
+    <p class="note">Estimated compute cost of the final training run (Stanford AI Index / Epoch AI). Bar for the 2017 Transformer is not to scale — the point is the jump of roughly five orders of magnitude in six years.</p>
+
+    <dl class="artifact">
+      <div><dt>Introduction</dt><dd><span class="todo">[IN YOUR WORDS: 2–3 sentences on why you chose LLM training costs as your artifact topic.]</span></dd></div>
+      <div><dt>Process</dt><dd><span class="todo">[IN YOUR WORDS: how you researched and built this artifact — which sources you compared, and what you found surprising about how differently labs disclose costs.]</span></dd></div>
+      <div><dt>Tools and technologies</dt><dd>HTML, CSS, GitHub, and GitHub Pages; sources as referenced below.</dd></div>
+      <div><dt>Value proposition</dt><dd>Decision-makers often see a single headline cost for an AI model. This artifact shows what that number includes, what it leaves out, and why two credible sources can differ by 2–6&times; on the same model.</dd></div>
+      <div><dt>References</dt><dd class="refs"><p class="ref">Achiam, J., et al. (2023). <em>GPT-4 technical report</em>. OpenAI. arXiv:2303.08774.</p><p class="ref">Cottier, B., Rahman, R., Fattorini, L., Maslej, N., Besiroglu, T., &amp; Owen, D. (2024). <em>The rising costs of training frontier AI models</em>. Epoch AI. arXiv:2405.21015.</p><p class="ref">Dubey, A., et al. (2024). <em>The Llama 3 herd of models</em>. Meta AI. arXiv:2407.21783.</p><p class="ref">Gemini Team, Google. (2023). <em>Gemini: A family of highly capable multimodal models</em>. Google DeepMind. arXiv:2312.11805.</p><p class="ref">Hoffmann, J., et al. (2022). Training compute-optimal large language models. In <em>Advances in Neural Information Processing Systems, 35</em>.</p><p class="ref">Kaplan, J., et al. (2020). <em>Scaling laws for neural language models</em>. OpenAI. arXiv:2001.08361.</p><p class="ref">Maslej, N., et al. (2025). <em>AI Index Report 2025</em>. Stanford University Institute for Human-Centered AI.</p><p class="ref">Meta. (2024). <em>Llama 3.1 model card</em>. GitHub: meta-llama/llama-models.</p></dd></div>
+    </dl>
+  </div>
+</section>
+
   <section id="about">
     <div class="wrap">
       <h2>About me</h2>
@@ -281,9 +362,7 @@
   </section>
 </main>
 
-<footer>
-  <div class="wrap">Built as part of my graduate coursework in AI and data analytics.</div>
-</footer>
+
 
 <script>
   const recommendations = {
