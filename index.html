@@ -181,14 +181,14 @@
   .reveal.visible { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
-    /* ARTIFACT 5 SPECIFIC STYLES */
+    /* ARTIFACT 5 SPECIFIC STYLES (uses the site palette: --paper, --ink, --rule, --signal, --sage) */
     .a5-banner {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: var(--primary-light);
-      color: var(--primary);
-      border: 1px solid var(--primary-border);
+      background: #F5F0E4;
+      color: var(--signal);
+      border: 1px solid var(--rule);
       font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -203,8 +203,8 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 8px;
-      background: var(--surface-alt);
-      border: 1px solid var(--border);
+      background: #F5F0E4;
+      border: 1px solid var(--rule);
       padding: 14px 16px;
       border-radius: 10px;
       margin: 18px 0 14px;
@@ -217,32 +217,33 @@
     }
 
     .a5-filter-btn {
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
+      border: 1px solid var(--rule);
+      background: #FFFFFF;
+      color: var(--ink);
       padding: 6px 12px;
       border-radius: 8px;
       font-size: 0.84rem;
       font-weight: 600;
+      font-family: inherit;
       cursor: pointer;
       transition: all 0.15s ease;
     }
 
     .a5-filter-btn:hover {
-      border-color: var(--primary);
-      color: var(--primary);
+      border-color: var(--signal);
+      color: var(--signal);
     }
 
     .a5-filter-btn.active {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #ffffff;
+      background: var(--signal);
+      border-color: var(--signal);
+      color: #FFFFFF;
     }
 
     .a5-scenario-callout {
-      background: var(--primary-light);
-      border: 1px solid var(--primary-border);
-      border-left: 4px solid var(--primary);
+      background: #F5F0E4;
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--signal);
       border-radius: 8px;
       padding: 12px 16px;
       margin-bottom: 18px;
@@ -252,9 +253,10 @@
     .table-wrap {
       width: 100%;
       overflow-x: auto;
-      border: 1px solid var(--border);
+      border: 1px solid var(--rule);
       border-radius: 10px;
       margin: 14px 0 22px;
+      background: #FFFFFF;
     }
 
     table.decision-matrix {
@@ -265,8 +267,8 @@
     }
 
     table.decision-matrix th {
-      background: var(--text);
-      color: #ffffff;
+      background: var(--ink);
+      color: var(--paper);
       text-align: left;
       padding: 13px 14px;
       font-weight: 600;
@@ -276,7 +278,7 @@
 
     table.decision-matrix td {
       padding: 14px;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--rule);
       vertical-align: top;
     }
 
@@ -285,8 +287,8 @@
     }
 
     table.decision-matrix tr.row-highlighted {
-      background-color: #eff6ff;
-      outline: 2px solid var(--primary);
+      background-color: #F7F1E3;
+      outline: 2px solid var(--signal);
       outline-offset: -2px;
     }
 
@@ -303,16 +305,16 @@
       margin-bottom: 5px;
     }
 
-    .pill-green { background: var(--green-bg); color: var(--green-text); }
-    .pill-amber { background: var(--amber-bg); color: var(--amber-text); }
-    .pill-red { background: var(--red-bg); color: var(--red-text); }
-    .pill-purple { background: var(--purple-bg); color: var(--purple-text); }
-    .pill-blue { background: var(--primary-light); color: var(--primary); }
+    .pill-green { background: #E1E9D8; color: #3F5A46; }
+    .pill-amber { background: #F6E7C1; color: #7A5410; }
+    .pill-red { background: #F2D8CC; color: #8A3320; }
+    .pill-purple { background: #E7E0CE; color: var(--ink); }
+    .pill-blue { background: #EFE9DC; color: var(--signal); }
 
     .metric-sub {
       display: block;
       font-size: 0.82rem;
-      color: var(--text-muted);
+      color: var(--ink-soft);
       margin-top: 2px;
     }
 
@@ -325,8 +327,8 @@
     }
 
     .bar-card {
-      background: var(--surface-alt);
-      border: 1px solid var(--border);
+      background: #FFFFFF;
+      border: 1px solid var(--rule);
       border-radius: 10px;
       padding: 14px 16px;
     }
@@ -349,13 +351,13 @@
       justify-content: space-between;
       font-size: 0.78rem;
       font-weight: 600;
-      color: var(--text-muted);
+      color: var(--ink-soft);
       margin-bottom: 3px;
     }
 
     .bar-track {
       height: 7px;
-      background: #cbd5e1;
+      background: #DCD2B8;
       border-radius: 999px;
       overflow: hidden;
     }
@@ -366,8 +368,8 @@
     }
 
     .rec-box {
-      border-left: 4px solid var(--primary);
-      background: var(--surface-alt);
+      border-left: 4px solid var(--signal);
+      background: #F5F0E4;
       padding: 14px 16px;
       border-radius: 8px;
       margin-bottom: 12px;
@@ -375,15 +377,15 @@
 
     .rec-box strong {
       display: block;
-      color: var(--primary);
+      color: var(--signal);
       margin-bottom: 4px;
     }
 
-    .references p {
+    #artifact-5 .references p {
       padding-left: 24px;
       text-indent: -24px;
       font-size: 0.9rem;
-      color: var(--text-muted);
+      color: var(--ink-soft);
       margin-bottom: 10px;
     }
 </style>
@@ -644,7 +646,7 @@
 </section>
 
       <!-- ARTIFACT 5: PRE-TRAINED MODEL TRADE-OFFS & DECISION MATRIX -->
-    <section id="artifact-5" class="card">
+    <section id="artifact-5">
       <div class="a5-banner">Artifact 5 &bull; Cross-Domain Model Selection</div>
       <h2>Artifact 5: Pre-Trained Model Trade-Offs &amp; Decision Matrix</h2>
 
@@ -835,42 +837,42 @@
       <div class="tradeoff-bars">
         <div class="bar-card">
           <h4>BERT-base (NLP Encoder)</h4>
-          <div class="bar-row"><div class="bar-label-row"><span>Compactness (Small Size)</span><span>65%</span></div><div class="bar-track"><div class="bar-fill" style="width:65%;background:#2563eb;"></div></div></div>
-          <div class="bar-row"><div class="bar-label-row"><span>Domain Accuracy</span><span>88%</span></div><div class="bar-track"><div class="bar-fill" style="width:88%;background:#16a34a;"></div></div></div>
-          <div class="bar-row"><div class="bar-label-row"><span>Inference Speed</span><span>82%</span></div><div class="bar-track"><div class="bar-fill" style="width:82%;background:#0d9488;"></div></div></div>
-          <div class="bar-row"><div class="bar-label-row"><span>Explainability</span><span>55%</span></div><div class="bar-track"><div class="bar-fill" style="width:55%;background:#d97706;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Compactness (Small Size)</span><span>65%</span></div><div class="bar-track"><div class="bar-fill" style="width:65%;background:#4A5968;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Domain Accuracy</span><span>88%</span></div><div class="bar-track"><div class="bar-fill" style="width:88%;background:#6F8F78;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Inference Speed</span><span>82%</span></div><div class="bar-track"><div class="bar-fill" style="width:82%;background:#C4532A;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Explainability</span><span>55%</span></div><div class="bar-track"><div class="bar-fill" style="width:55%;background:#B98A2F;"></div></div></div>
         </div>
 
         <div class="bar-card">
           <h4>Llama 3 8B Instruct (GenAI LLM)</h4>
-          <div class="bar-row"><div class="bar-label-row"><span>Compactness (Small Size)</span><span>20%</span></div><div class="bar-track"><div class="bar-fill" style="width:20%;background:#dc2626;"></div></div></div>
-          <div class="bar-row"><div class="bar-label-row"><span>General Reasoning Accuracy</span><span>92%</span></div><div class="bar-track"><div class="bar-fill" style="width:92%;background:#16a34a;"></div></div></div>
-          <div class="bar-row"><div class="bar-label-row"><span>Inference Speed</span><span>35%</span></div><div class="bar-track"><div class="bar-fill" style="width:35%;background:#dc2626;"></div></div></div>
-          <div class="bar-row"><div class="bar-label-row"><span>Explainability</span><span>25%</span></div><div class="bar-track"><div class="bar-fill" style="width:25%;background:#dc2626;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Compactness (Small Size)</span><span>20%</span></div><div class="bar-track"><div class="bar-fill" style="width:20%;background:#A83A22;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>General Reasoning Accuracy</span><span>92%</span></div><div class="bar-track"><div class="bar-fill" style="width:92%;background:#6F8F78;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Inference Speed</span><span>35%</span></div><div class="bar-track"><div class="bar-fill" style="width:35%;background:#A83A22;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Explainability</span><span>25%</span></div><div class="bar-track"><div class="bar-fill" style="width:25%;background:#A83A22;"></div></div></div>
         </div>
 
         <div class="bar-card">
           <h4>MobileNetV3-Large (Edge Vision)</h4>
-          <div class="bar-row"><div class="bar-label-row"><span>Compactness (Small Size)</span><span>92%</span></div><div class="bar-track"><div class="bar-fill" style="width:92%;background:#16a34a;"></div></div></div>
-          <div class="bar-row"><div class="bar-label-row"><span>Vision Accuracy</span><span>75%</span></div><div class="bar-track"><div class="bar-fill" style="width:75%;background:#2563eb;"></div></div></div>
-          <div class="bar-row"><div class="bar-label-row"><span>Inference Speed</span><span>95%</span></div><div class="bar-track"><div class="bar-fill" style="width:95%;background:#16a34a;"></div></div></div>
-          <div class="bar-row"><div class="bar-label-row"><span>Explainability</span><span>55%</span></div><div class="bar-track"><div class="bar-fill" style="width:55%;background:#d97706;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Compactness (Small Size)</span><span>92%</span></div><div class="bar-track"><div class="bar-fill" style="width:92%;background:#6F8F78;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Vision Accuracy</span><span>75%</span></div><div class="bar-track"><div class="bar-fill" style="width:75%;background:#4A5968;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Inference Speed</span><span>95%</span></div><div class="bar-track"><div class="bar-fill" style="width:95%;background:#6F8F78;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Explainability</span><span>55%</span></div><div class="bar-track"><div class="bar-fill" style="width:55%;background:#B98A2F;"></div></div></div>
         </div>
 
         <div class="bar-card">
           <h4>EfficientNet-B4 (Cloud Vision)</h4>
-          <div class="bar-row"><div class="bar-label-row"><span>Compactness (Small Size)</span><span>78%</span></div><div class="bar-track"><div class="bar-fill" style="width:78%;background:#2563eb;"></div></div></div>
-          <div class="bar-row"><div class="bar-label-row"><span>Vision Accuracy</span><span>90%</span></div><div class="bar-track"><div class="bar-fill" style="width:90%;background:#16a34a;"></div></div></div>
-          <div class="bar-row"><div class="bar-label-row"><span>Inference Speed</span><span>68%</span></div><div class="bar-track"><div class="bar-fill" style="width:68%;background:#0d9488;"></div></div></div>
-          <div class="bar-row"><div class="bar-label-row"><span>Explainability</span><span>58%</span></div><div class="bar-track"><div class="bar-fill" style="width:58%;background:#d97706;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Compactness (Small Size)</span><span>78%</span></div><div class="bar-track"><div class="bar-fill" style="width:78%;background:#4A5968;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Vision Accuracy</span><span>90%</span></div><div class="bar-track"><div class="bar-fill" style="width:90%;background:#6F8F78;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Inference Speed</span><span>68%</span></div><div class="bar-track"><div class="bar-fill" style="width:68%;background:#C4532A;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Explainability</span><span>58%</span></div><div class="bar-track"><div class="bar-fill" style="width:58%;background:#B98A2F;"></div></div></div>
         </div>
 
         <div class="bar-card">
           <h4>XGBoost (Tabular Ensemble)</h4>
-          <div class="bar-row"><div class="bar-label-row"><span>Compactness (Small Size)</span><span>98%</span></div><div class="bar-track"><div class="bar-fill" style="width:98%;background:#16a34a;"></div></div></div>
-          <div class="bar-row"><div class="bar-label-row"><span>Tabular Accuracy</span><span>93%</span></div><div class="bar-track"><div class="bar-fill" style="width:93%;background:#16a34a;"></div></div></div>
-          <div class="bar-row"><div class="bar-label-row"><span>Inference Speed</span><span>99%</span></div><div class="bar-track"><div class="bar-fill" style="width:99%;background:#16a34a;"></div></div></div>
-          <div class="bar-row"><div class="bar-label-row"><span>Explainability</span><span>95%</span></div><div class="bar-track"><div class="bar-fill" style="width:95%;background:#16a34a;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Compactness (Small Size)</span><span>98%</span></div><div class="bar-track"><div class="bar-fill" style="width:98%;background:#6F8F78;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Tabular Accuracy</span><span>93%</span></div><div class="bar-track"><div class="bar-fill" style="width:93%;background:#6F8F78;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Inference Speed</span><span>99%</span></div><div class="bar-track"><div class="bar-fill" style="width:99%;background:#6F8F78;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Explainability</span><span>95%</span></div><div class="bar-track"><div class="bar-fill" style="width:95%;background:#6F8F78;"></div></div></div>
         </div>
       </div>
 
