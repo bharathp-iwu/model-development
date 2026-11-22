@@ -180,6 +180,212 @@
   .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
   .reveal.visible { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* ARTIFACT 5 SPECIFIC STYLES */
+    .a5-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid var(--primary-border);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .a5-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin: 18px 0 14px;
+    }
+
+    .a5-filter-label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-right: 4px;
+    }
+
+    .a5-filter-btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .a5-filter-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .a5-filter-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .a5-scenario-callout {
+      background: var(--primary-light);
+      border: 1px solid var(--primary-border);
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      font-size: 0.93rem;
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin: 14px 0 22px;
+    }
+
+    table.decision-matrix {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 820px;
+      font-size: 0.9rem;
+    }
+
+    table.decision-matrix th {
+      background: var(--text);
+      color: #ffffff;
+      text-align: left;
+      padding: 13px 14px;
+      font-weight: 600;
+      font-size: 0.84rem;
+      letter-spacing: 0.02em;
+    }
+
+    table.decision-matrix td {
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    table.decision-matrix tr:last-child td {
+      border-bottom: none;
+    }
+
+    table.decision-matrix tr.row-highlighted {
+      background-color: #eff6ff;
+      outline: 2px solid var(--primary);
+      outline-offset: -2px;
+    }
+
+    table.decision-matrix tr.row-dimmed {
+      opacity: 0.45;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .pill-green { background: var(--green-bg); color: var(--green-text); }
+    .pill-amber { background: var(--amber-bg); color: var(--amber-text); }
+    .pill-red { background: var(--red-bg); color: var(--red-text); }
+    .pill-purple { background: var(--purple-bg); color: var(--purple-text); }
+    .pill-blue { background: var(--primary-light); color: var(--primary); }
+
+    .metric-sub {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Visual Trade-off Bars */
+    .tradeoff-bars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin: 16px 0 24px;
+    }
+
+    .bar-card {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .bar-card h4 {
+      margin: 0 0 10px;
+      font-size: 0.95rem;
+    }
+
+    .bar-row {
+      margin-bottom: 8px;
+    }
+
+    .bar-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .bar-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+
+    .bar-track {
+      height: 7px;
+      background: #cbd5e1;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+    }
+
+    .rec-box {
+      border-left: 4px solid var(--primary);
+      background: var(--surface-alt);
+      padding: 14px 16px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .rec-box strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .references p {
+      padding-left: 24px;
+      text-indent: -24px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
 </style>
 </head>
 <body>
@@ -195,6 +401,7 @@
       <a href="#artifact-2">Artifact 2: Neural Networks</a>
       <a href="#artifact-3">Artifact 3: LLM Training</a>
       <a href="#artifact-4">Artifact 4: Explainable AI</a>
+      <a href="#artifact-5">Artifact 5: Model Trade-Offs</a>
       <a href="#about">About me</a>
       <a href="https://www.linkedin.com/in/bharathpunati01" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/bharathp-iwu" target="_blank" rel="noopener">GitHub</a>
@@ -436,6 +643,274 @@
   </div>
 </section>
 
+      <!-- ARTIFACT 5: PRE-TRAINED MODEL TRADE-OFFS & DECISION MATRIX -->
+    <section id="artifact-5" class="card">
+      <div class="a5-banner">Artifact 5 &bull; Cross-Domain Model Selection</div>
+      <h2>Artifact 5: Pre-Trained Model Trade-Offs &amp; Decision Matrix</h2>
+
+      <h3>1. Introduction</h3>
+      <p>Selecting an AI model for production is rarely a matter of picking whichever architecture tops a public leaderboard. Across <strong>Natural Language Processing (NLP) and Generative AI</strong>, <strong>Computer Vision</strong>, and <strong>Tabular Data</strong>, practitioners face structural trade-offs among <strong>model size</strong> (parameter count and memory footprint), <strong>predictive accuracy</strong>, <strong>inference speed</strong> (latency and throughput), and <strong>explainability</strong>.</p>
+      <p>As AI systems move into latency-sensitive edge devices and regulated enterprise workflows, explainability becomes just as critical as raw accuracy. A 70-billion-parameter generative model may achieve strong reasoning scores, yet fail on a mobile battery budget or in a financial audit where every decision requires transparent feature attribution. Conversely, a compact tree ensemble or edge-optimized convolutional network can deliver sub-10 millisecond inference and clear interpretability while outperforming massive neural architectures on structured or embedded tasks.</p>
+
+      <h3>2. Methodology</h3>
+      <p>To evaluate cross-domain trade-offs systematically, I selected <strong>five representative pre-trained and industry-standard models</strong> spanning three core application areas and distinct deployment tiers:</p>
+      <ul>
+        <li><strong>NLP &amp; Generative AI:</strong> <em>BERT-base (110M)</em> for bidirectional text understanding and classification, and <em>Llama 3 8B Instruct</em> for open-weight generative reasoning and summarization.</li>
+        <li><strong>Computer Vision:</strong> <em>MobileNetV3-Large</em> for resource-constrained mobile/edge inference, and <em>EfficientNet-B4</em> for high-accuracy cloud or workstation image recognition.</li>
+        <li><strong>Tabular Data:</strong> <em>XGBoost (Gradient Boosted Decision Trees)</em> as the benchmark architecture for structured relational data where native interpretability and tabular accuracy are paramount.</li>
+      </ul>
+      <p>Quantitative specifications, including parameter counts, FP32/quantized memory footprints, standard benchmark results (GLUE, MMLU, ImageNet-1K Top-1, and structured tabular ROC-AUC), and typical single-sample inference latencies, were compiled from original peer-reviewed papers, Hugging Face Model Hub model cards, Papers With Code leaderboards, and PyTorch/ONNX runtime benchmarks.</p>
+
+      <h3>3. Cross-Domain Decision Matrix</h3>
+      <p>Use the scenario filter below to highlight which model best fits a specific engineering constraint, or inspect the full comparison matrix across size, accuracy, speed, explainability, and operational considerations.</p>
+
+      <!-- Interactive Scenario Filter -->
+      <div class="a5-filter-bar" role="group" aria-label="Filter decision matrix by deployment priority">
+        <span class="a5-filter-label">Filter by Priority:</span>
+        <button type="button" class="a5-filter-btn active" data-priority="all">All Models (5)</button>
+        <button type="button" class="a5-filter-btn" data-priority="edge">Mobile / Edge Latency</button>
+        <button type="button" class="a5-filter-btn" data-priority="explainability">High Explainability &amp; Tabular</button>
+        <button type="button" class="a5-filter-btn" data-priority="vision-acc">High-Accuracy Vision</button>
+        <button type="button" class="a5-filter-btn" data-priority="nlp-fast">Fast Text Classification</button>
+        <button type="button" class="a5-filter-btn" data-priority="genai">Generative Reasoning</button>
+      </div>
+
+      <div id="a5-callout" class="a5-scenario-callout" aria-live="polite">
+        <strong>Overview Mode:</strong> Comparing all five models across NLP/Generative AI, Computer Vision, and Tabular domains. Select a priority above to highlight the optimal choice.
+      </div>
+
+      <div class="table-wrap">
+        <table class="decision-matrix" id="a5-matrix-table">
+          <thead>
+            <tr>
+              <th style="width:17%;">Model &amp; Domain</th>
+              <th style="width:18%;">Model Size &amp; Footprint</th>
+              <th style="width:19%;">Accuracy (Benchmarks)</th>
+              <th style="width:18%;">Inference Speed</th>
+              <th style="width:13%;">Explainability</th>
+              <th style="width:15%;">Additional Considerations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-tags="nlp-fast">
+              <td>
+                <strong>BERT-base</strong><br/>
+                <span class="pill pill-blue">NLP &bull; Encoder</span>
+                <span class="metric-sub">Bidirectional Transformer</span>
+              </td>
+              <td>
+                <span class="pill pill-amber">Medium (110M)</span>
+                <span class="metric-sub">~440 MB (FP32)<br/>~110 MB (INT8 quantized)</span>
+              </td>
+              <td>
+                <span class="pill pill-green">High Task Accuracy</span>
+                <span class="metric-sub">79.6 GLUE score<br/>88.5 F1 on SQuAD v1.1</span>
+              </td>
+              <td>
+                <span class="pill pill-green">Fast (~6-15 ms)</span>
+                <span class="metric-sub">~6 ms on T4 GPU;<br/>~15-35 ms on CPU (128 tokens)</span>
+              </td>
+              <td>
+                <span class="pill pill-amber">Moderate</span>
+                <span class="metric-sub">Token attention maps &amp; Integrated Gradients</span>
+              </td>
+              <td>
+                <strong>Low cloud cost;</strong> mature Hugging Face ecosystem; 512-token context limit; cannot generate free-form text.
+              </td>
+            </tr>
+
+            <tr data-tags="genai">
+              <td>
+                <strong>Llama 3 8B Instruct</strong><br/>
+                <span class="pill pill-purple">Generative AI &bull; LLM</span>
+                <span class="metric-sub">Autoregressive Decoder</span>
+              </td>
+              <td>
+                <span class="pill pill-red">Large (8.03B)</span>
+                <span class="metric-sub">~16.1 GB (FP16)<br/>~4.9 GB (4-bit GGUF/AWQ)</span>
+              </td>
+              <td>
+                <span class="pill pill-green">Very High (General)</span>
+                <span class="metric-sub">68.4% MMLU (5-shot)<br/>79.6% GSM8K math</span>
+              </td>
+              <td>
+                <span class="pill pill-red">Slower (~25-45 ms/tok)</span>
+                <span class="metric-sub">~1.5-4 sec per full reply on GPU; sequential token generation</span>
+              </td>
+              <td>
+                <span class="pill pill-red">Low (Black-Box)</span>
+                <span class="metric-sub">Chain-of-thought rationales can hallucinate; high audit complexity</span>
+              </td>
+              <td>
+                <strong>High GPU/VRAM &amp; energy draw;</strong> zero-shot versatility across summarization, coding, and Q&amp;A without task-specific training.
+              </td>
+            </tr>
+
+            <tr data-tags="edge">
+              <td>
+                <strong>MobileNetV3-Large</strong><br/>
+                <span class="pill pill-blue">Computer Vision</span>
+                <span class="metric-sub">Depthwise-Separable CNN</span>
+              </td>
+              <td>
+                <span class="pill pill-green">Compact (5.4M)</span>
+                <span class="metric-sub">~21.5 MB (FP32)<br/>~5.5 MB (INT8 TFLite)</span>
+              </td>
+              <td>
+                <span class="pill pill-amber">Good (75.2% Top-1)</span>
+                <span class="metric-sub">75.2% ImageNet-1K Top-1<br/>92.2% Top-5 accuracy</span>
+              </td>
+              <td>
+                <span class="pill pill-green">Ultra-Fast (~2-8 ms)</span>
+                <span class="metric-sub">&lt;2 ms on mobile NPU;<br/>~5-8 ms on mobile ARM CPU</span>
+              </td>
+              <td>
+                <span class="pill pill-amber">Moderate</span>
+                <span class="metric-sub">Grad-CAM &amp; feature activation heatmaps</span>
+              </td>
+              <td>
+                <strong>Ultra-low battery &amp; thermal footprint;</strong> ideal for on-device iOS/Android camera apps with offline privacy.
+              </td>
+            </tr>
+
+            <tr data-tags="vision-acc">
+              <td>
+                <strong>EfficientNet-B4</strong><br/>
+                <span class="pill pill-blue">Computer Vision</span>
+                <span class="metric-sub">Compound-Scaled CNN</span>
+              </td>
+              <td>
+                <span class="pill pill-amber">Medium-Small (19.3M)</span>
+                <span class="metric-sub">~75 MB (FP32)<br/>~20 MB (INT8 quantized)</span>
+              </td>
+              <td>
+                <span class="pill pill-green">Very High (82.9% Top-1)</span>
+                <span class="metric-sub">82.9% ImageNet-1K Top-1<br/>96.4% Top-5 accuracy</span>
+              </td>
+              <td>
+                <span class="pill pill-amber">Moderate (~18-35 ms)</span>
+                <span class="metric-sub">~18 ms on GPU (380&times;380 input); ~65 ms on CPU</span>
+              </td>
+              <td>
+                <span class="pill pill-amber">Moderate</span>
+                <span class="metric-sub">Grad-CAM saliency maps; higher resolution aids visual inspection</span>
+              </td>
+              <td>
+                <strong>Best accuracy-per-FLOP ratio;</strong> requires 380&times;380 input resolution, increasing memory bandwidth over MobileNet.
+              </td>
+            </tr>
+
+            <tr data-tags="explainability">
+              <td>
+                <strong>XGBoost</strong><br/>
+                <span class="pill pill-green">Tabular Data</span>
+                <span class="metric-sub">Gradient Boosted Trees</span>
+              </td>
+              <td>
+                <span class="pill pill-green">Tiny (~0.5-5 MB)</span>
+                <span class="metric-sub">~10K-250K tree nodes<br/>Fits entirely in CPU L2/L3 cache</span>
+              </td>
+              <td>
+                <span class="pill pill-green">SOTA Tabular (0.88-0.94 AUC)</span>
+                <span class="metric-sub">Outperforms deep neural nets on structured tables (UCI/Kaggle)</span>
+              </td>
+              <td>
+                <span class="pill pill-green">Sub-Millisecond (&lt;1 ms)</span>
+                <span class="metric-sub">~0.1-0.8 ms per row on standard CPU; thousands of rows/sec</span>
+              </td>
+              <td>
+                <span class="pill pill-green">High (Native)</span>
+                <span class="metric-sub">Exact TreeSHAP values, split gain, and auditable decision rules</span>
+              </td>
+              <td>
+                <strong>Negligible energy &amp; no GPU needed;</strong> handles missing values natively; unsuitable for raw unstructured text or pixels.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Visual Relative Comparison Bars -->
+      <h3>4. Visual Trade-Off Profile (Relative Normalized Scores)</h3>
+      <div class="tradeoff-bars">
+        <div class="bar-card">
+          <h4>BERT-base (NLP Encoder)</h4>
+          <div class="bar-row"><div class="bar-label-row"><span>Compactness (Small Size)</span><span>65%</span></div><div class="bar-track"><div class="bar-fill" style="width:65%;background:#2563eb;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Domain Accuracy</span><span>88%</span></div><div class="bar-track"><div class="bar-fill" style="width:88%;background:#16a34a;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Inference Speed</span><span>82%</span></div><div class="bar-track"><div class="bar-fill" style="width:82%;background:#0d9488;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Explainability</span><span>55%</span></div><div class="bar-track"><div class="bar-fill" style="width:55%;background:#d97706;"></div></div></div>
+        </div>
+
+        <div class="bar-card">
+          <h4>Llama 3 8B Instruct (GenAI LLM)</h4>
+          <div class="bar-row"><div class="bar-label-row"><span>Compactness (Small Size)</span><span>20%</span></div><div class="bar-track"><div class="bar-fill" style="width:20%;background:#dc2626;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>General Reasoning Accuracy</span><span>92%</span></div><div class="bar-track"><div class="bar-fill" style="width:92%;background:#16a34a;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Inference Speed</span><span>35%</span></div><div class="bar-track"><div class="bar-fill" style="width:35%;background:#dc2626;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Explainability</span><span>25%</span></div><div class="bar-track"><div class="bar-fill" style="width:25%;background:#dc2626;"></div></div></div>
+        </div>
+
+        <div class="bar-card">
+          <h4>MobileNetV3-Large (Edge Vision)</h4>
+          <div class="bar-row"><div class="bar-label-row"><span>Compactness (Small Size)</span><span>92%</span></div><div class="bar-track"><div class="bar-fill" style="width:92%;background:#16a34a;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Vision Accuracy</span><span>75%</span></div><div class="bar-track"><div class="bar-fill" style="width:75%;background:#2563eb;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Inference Speed</span><span>95%</span></div><div class="bar-track"><div class="bar-fill" style="width:95%;background:#16a34a;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Explainability</span><span>55%</span></div><div class="bar-track"><div class="bar-fill" style="width:55%;background:#d97706;"></div></div></div>
+        </div>
+
+        <div class="bar-card">
+          <h4>EfficientNet-B4 (Cloud Vision)</h4>
+          <div class="bar-row"><div class="bar-label-row"><span>Compactness (Small Size)</span><span>78%</span></div><div class="bar-track"><div class="bar-fill" style="width:78%;background:#2563eb;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Vision Accuracy</span><span>90%</span></div><div class="bar-track"><div class="bar-fill" style="width:90%;background:#16a34a;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Inference Speed</span><span>68%</span></div><div class="bar-track"><div class="bar-fill" style="width:68%;background:#0d9488;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Explainability</span><span>58%</span></div><div class="bar-track"><div class="bar-fill" style="width:58%;background:#d97706;"></div></div></div>
+        </div>
+
+        <div class="bar-card">
+          <h4>XGBoost (Tabular Ensemble)</h4>
+          <div class="bar-row"><div class="bar-label-row"><span>Compactness (Small Size)</span><span>98%</span></div><div class="bar-track"><div class="bar-fill" style="width:98%;background:#16a34a;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Tabular Accuracy</span><span>93%</span></div><div class="bar-track"><div class="bar-fill" style="width:93%;background:#16a34a;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Inference Speed</span><span>99%</span></div><div class="bar-track"><div class="bar-fill" style="width:99%;background:#16a34a;"></div></div></div>
+          <div class="bar-row"><div class="bar-label-row"><span>Explainability</span><span>95%</span></div><div class="bar-track"><div class="bar-fill" style="width:95%;background:#16a34a;"></div></div></div>
+        </div>
+      </div>
+
+      <h3>5. Analysis &amp; Domain Recommendations</h3>
+      <p><strong>Strengths, Weaknesses, and Structural Trade-Offs:</strong></p>
+      <ul>
+        <li><strong>NLP &amp; Generative AI (BERT-base vs. Llama 3 8B):</strong> Moving from a 110M-parameter encoder (BERT) to an 8B-parameter decoder (Llama 3) expands capability from narrow classification to open-ended reasoning, summarization, and code synthesis. However, that flexibility increases memory requirements by ~36&times; (FP16) and shifts inference from a single ~10 ms forward pass to sequential token-by-token generation. Furthermore, while BERT predictions can be traced back to specific input tokens via attention and gradient attribution, LLM outputs remain opaque and prone to plausible-sounding hallucinations.</li>
+        <li><strong>Computer Vision (MobileNetV3-Large vs. EfficientNet-B4):</strong> Both models leverage depthwise-separable convolutions, yet EfficientNet-B4 uses compound scaling across network depth, width, and input resolution (380&times;380 vs. 224&times;224) to gain <strong>+7.7 percentage points</strong> in ImageNet Top-1 accuracy (82.9% vs. 75.2%). The trade-off is a 3.5&times; larger parameter footprint and roughly 3&times; to 4&times; higher inference latency, making MobileNetV3 superior for real-time mobile video and EfficientNet-B4 better suited for server-side diagnostics.</li>
+        <li><strong>Tabular Data (XGBoost vs. Deep Neural Models):</strong> Unlike unstructured text or imagery, tabular records contain heterogeneous features with irregular decision boundaries. XGBoost achieves top-tier predictive accuracy with a memory footprint under 5 MB, sub-millisecond CPU inference, and exact polynomial-time <strong>TreeSHAP</strong> explanations, demonstrating that larger neural models are actively counterproductive when structured tabular interpretability and latency matter.</li>
+      </ul>
+
+      <div class="rec-box">
+        <strong>Recommendation 1 — NLP &amp; Generative AI Scenarios</strong>
+        Use <strong>BERT-base</strong> (or distilled variants) for high-throughput, low-latency classification pipelines such as spam filtering, sentiment routing, and entity extraction where labeled training data exists. Select <strong>Llama 3 8B Instruct</strong> when tasks require zero-shot generalization, multi-document summarization, or conversational reasoning, and pair it with Retrieval-Augmented Generation (RAG) to ground outputs in verifiable sources.
+      </div>
+
+      <div class="rec-box">
+        <strong>Recommendation 2 — Computer Vision Scenarios</strong>
+        Deploy <strong>MobileNetV3-Large</strong> for on-device mobile applications, AR filters, and battery-powered IoT cameras requiring &lt;10 ms frame latency without cloud connectivity. Choose <strong>EfficientNet-B4</strong> for cloud-hosted quality control, medical imaging triage, or retail catalog tagging where higher classification accuracy justifies GPU inference.
+      </div>
+
+      <div class="rec-box">
+        <strong>Recommendation 3 — Tabular &amp; Regulated Enterprise Scenarios</strong>
+        Default to <strong>XGBoost</strong> for credit underwriting, customer churn prediction, fraud scoring, and supply-chain forecasting. Its combination of sub-millisecond CPU execution, minimal energy consumption, and exact SHAP feature attributions satisfies both real-time SLA constraints and regulatory audit requirements.
+      </div>
+
+      <h3>6. Conclusion</h3>
+      <p>This cross-domain investigation confirms that optimal model selection depends on aligning architectural inductive bias with operational constraints rather than maximizing parameter count. In Computer Vision and NLP, scaling up parameters and input resolution reliably improves accuracy at the expense of memory, energy, latency, and transparency. In Tabular Data, gradient-boosted trees simultaneously lead in accuracy, speed, compactness, and explainability. By anchoring model selection in a structured decision matrix, AI engineers can avoid over-engineering, reduce infrastructure costs, and deploy trustworthy systems tailored to each domain.</p>
+
+      <h3>7. References</h3>
+      <div class="references">
+        <p>Chen, T., &amp; Guestrin, C. (2016). XGBoost: A scalable tree boosting system. In <em>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</em> (pp. 785-794). ACM. https://doi.org/10.1145/2939672.2939785</p>
+        <p>Devlin, J., Chang, M.-W., Lee, K., &amp; Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In <em>Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies</em> (pp. 4171-4186). Association for Computational Linguistics.</p>
+        <p>Grattafiori, A., Dubey, A., Jauhri, A., Pandey, A., Kadian, A., Al-Dahle, A., ... &amp; Meta AI. (2024). The Llama 3 herd of models. <em>arXiv preprint arXiv:2407.21783</em>. https://arxiv.org/abs/2407.21783</p>
+        <p>Howard, A., Sandler, M., Chu, G., Chen, L.-C., Chen, B., Tan, M., Wang, W., Zhu, Y., Pang, R., Vasudevan, V., Le, Q. V., &amp; Adam, H. (2019). Searching for MobileNetV3. In <em>Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)</em> (pp. 1314-1324).</p>
+        <p>Lundberg, S. M., &amp; Lee, S.-I. (2017). A unified approach to interpreting model predictions. In <em>Advances in Neural Information Processing Systems, 30</em> (pp. 4765-4774).</p>
+        <p>Tan, M., &amp; Le, Q. V. (2019). EfficientNet: Rethinking model scaling for convolutional neural networks. In <em>Proceedings of the 36th International Conference on Machine Learning (ICML)</em> (pp. 6105-6114). PMLR.</p>
+      </div>
+    </section>
+
   <section id="about">
     <div class="wrap">
       <h2>About me</h2>
@@ -536,5 +1011,42 @@
     sections.forEach(function (s) { io.observe(s); });
   })();
 </script>
+  <script>
+    // Artifact 5 Decision Matrix Filter Logic
+    const calloutMessages = {
+      "all": "<strong>Overview Mode:</strong> Comparing all five models across NLP/Generative AI, Computer Vision, and Tabular domains. Select a priority above to highlight the optimal choice.",
+      "edge": "<strong>Mobile / Edge Priority &rarr; MobileNetV3-Large:</strong> At 5.4M parameters (~5.5 MB quantized) and &lt;8 ms mobile latency, MobileNetV3 delivers real-time vision without cloud round-trips.",
+      "explainability": "<strong>High Explainability &amp; Tabular Priority &rarr; XGBoost:</strong> Delivers top tabular accuracy, &lt;1 ms CPU inference, and exact TreeSHAP feature attributions for regulated audits.",
+      "vision-acc": "<strong>High-Accuracy Vision Priority &rarr; EfficientNet-B4:</strong> Achieves 82.9% ImageNet Top-1 accuracy (+7.7% over MobileNetV3) via compound scaling for server-side inspection.",
+      "nlp-fast": "<strong>Fast Text Classification Priority &rarr; BERT-base:</strong> Processes fixed-length text in ~6-15 ms on GPU with strong GLUE benchmark accuracy and low serving cost.",
+      "genai": "<strong>Generative Reasoning Priority &rarr; Llama 3 8B Instruct:</strong> Best fit for open-ended summarization, instruction following, and multi-step reasoning where encoder models cannot generate text."
+    };
+
+    const filterBtns = document.querySelectorAll(".a5-filter-btn");
+    const matrixRows = document.querySelectorAll("#a5-matrix-table tbody tr");
+    const a5Callout = document.getElementById("a5-callout");
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const priority = btn.dataset.priority;
+        a5Callout.innerHTML = calloutMessages[priority] || calloutMessages["all"];
+
+        matrixRows.forEach(row => {
+          row.classList.remove("row-highlighted", "row-dimmed");
+          if (priority !== "all") {
+            const tags = (row.dataset.tags || "").split(" ");
+            if (tags.includes(priority)) {
+              row.classList.add("row-highlighted");
+            } else {
+              row.classList.add("row-dimmed");
+            }
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
